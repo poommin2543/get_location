@@ -53,6 +53,8 @@ class publishGPS(object):
 				latitude = float(value)
 			if key == "longitude":
 				longitude = float(value)
+			if key == "altitude":
+				altitude = float(value)
 	
 		print(latitude,longitude)
 		
@@ -65,6 +67,7 @@ class publishGPS(object):
 		# gpsmsg.longitude=float(2.25555)
 		gpsmsg.latitude=float(latitude)
 		gpsmsg.longitude=float(longitude)
+		gpsmsg.altitude=float(altitude)
 		self.gps_pub.publish(gpsmsg)
 
 	def run(self):
